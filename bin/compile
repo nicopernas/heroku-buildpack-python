@@ -236,6 +236,13 @@ for dir in $CACHED_DIRS; do
   cp -R $dir $CACHE_DIR/
 done
 
+if [ -f $BUILD_DIR/dependencies.txt ]; then
+  puts-step "Installing extra dependencies" | indent
+  perl $BIN_DIR/install_dependencies.pl $BUILD_DIR/dependencies.txt
+fi
+
+
+
 # Set context environment variables.
 
 set-env PATH '$HOME/.heroku/venv/bin:$PATH'

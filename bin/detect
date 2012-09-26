@@ -25,6 +25,12 @@ if [ ! -f $BUILD_DIR/requirements.txt ]; then
   exit 0
 fi
 
+# Want to add more dependencies?
+if [ ! -f $BUILD_DIR/dependencies.txt ]; then
+  echo No extra dependencies found
+fi
+
+
 # `Python/Django` if `**/settings.py` is present and `django` exists in
 # `requirements.txt`.
 #
