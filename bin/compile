@@ -238,7 +238,7 @@ done
 
 if [ -f $BUILD_DIR/dependencies.txt ]; then
   puts-step "Installing extra dependencies"
-  perl $BIN_DIR/install_dependencies.pl $BUILD_DIR/dependencies.txt
+  perl $BIN_DIR/install_dependencies.pl $CACHE_DIR $BUILD_DIR/dependencies.txt
 fi
 
 

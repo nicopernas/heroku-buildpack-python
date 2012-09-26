@@ -10,8 +10,8 @@ sub quit {
   exit 1;
 }
 
-my $dependencies = shift || quit("No input given");
-
+my $cache_dir = shift || quit("No cache directory given");
+my $dependencies = shift || quit("No dependencies file given");
 
 open my $DEPENDENCIES_FILE, "<", $dependencies;
 
