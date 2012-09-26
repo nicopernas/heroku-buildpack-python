@@ -237,7 +237,7 @@ for dir in $CACHED_DIRS; do
 done
 
 if [ -f $BUILD_DIR/dependencies.txt ]; then
-  puts-step "Installing extra dependencies" | indent
+  puts-step "Installing extra dependencies"
   perl $BIN_DIR/install_dependencies.pl $BUILD_DIR/dependencies.txt
 fi
 
