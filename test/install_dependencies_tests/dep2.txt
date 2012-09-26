@@ -1,0 +1,9 @@
+# Comments should be avoided
+
+dep1:
+ - cmd1
+dep2:
+ -     cmd2
+dep3:
+ -  cmd3
+

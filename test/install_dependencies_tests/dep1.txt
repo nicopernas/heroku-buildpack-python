@@ -1,0 +1,7 @@
+# Comments should be avoided
+
+cairo:
+ - wget cairo
+ - ./configure --prefix=...
+ - make
+ - make install
