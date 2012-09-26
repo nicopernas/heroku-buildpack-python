@@ -16,8 +16,9 @@ my $dependencies = shift || quit("No input given");
 open my $DEPENDENCIES_FILE, "<", $dependencies;
 
 while(<$DEPENDENCIES_FILE>) {
-  continue if m/^#,*/;
+  next if m/^#.*/;
+  chomp;
   print "=>$_<= \n";
 }
 
-
+close $DEPENDENCIES_FILE;
