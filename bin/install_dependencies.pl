@@ -66,8 +66,7 @@ parse_dependencies($dep_filename);
 my @cmds;
 foreach my $dep (sort keys %dependencies) {
   foreach my $cmd (@{$dependencies{$dep}}) {
-    push @cmds, $cmd; 
-    
+    push @cmds, $cmd;  
   }
 }
 my $full_cmd = join ' ' , split(/ /, join(' && ', @cmds));
