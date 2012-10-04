@@ -29,12 +29,12 @@ EOF
 {
   my $expected =<<EOF;
 Got 3 dependency/es
-dep1:
-   cmd1
-dep2:
-   cmd2
 dep3:
    cmd3
+dep2:
+   cmd2
+dep1:
+   cmd1
 EOF
   is(`perl $app cache_dir build_dir dep2.txt`, $expected, "Handles multiples dependencies");
 }
@@ -61,7 +61,9 @@ EOF
   mkdir 'cache';
   mkdir 'build';
   system "perl $app $pwd/cache $pwd/build $pwd/dep5.txt &>/dev/null";
-  ok(-f "$pwd/build/lib/libz.a", 'Installing zlib from the scratch');  
+  ok(-f "$pwd/build/zlib/lib/libz.a" and -f "$pwd/build/libnpg/lib/libpng.a", 
+    'Installing zlib from the scratch');  
+
   system 'rm -rf cache build';
 }
 
