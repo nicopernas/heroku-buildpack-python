@@ -1,0 +1,6 @@
+# Replace the BUILD_DIR macro
+
+dep1:
+
+ - ls BUILD_DIR
+ 

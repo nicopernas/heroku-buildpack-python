@@ -1,0 +1,6 @@
+# Executes a basic command
+
+create_file:
+ 
+ - touch file.txt
+
