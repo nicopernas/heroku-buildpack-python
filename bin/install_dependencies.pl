@@ -70,6 +70,7 @@ foreach my $dep (@dependencies) {
   }
 }
 my $full_cmd = join ' ' , split(/ /, join(' && ', @cmds));
+print "$full_cmd\n";
 system($full_cmd) unless $DEV;
 
 chdir $actual_dir;
