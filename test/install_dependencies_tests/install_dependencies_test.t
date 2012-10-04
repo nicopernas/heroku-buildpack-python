@@ -56,7 +56,8 @@ EOF
   is(`perl $app cache_dir build_dir dep4.txt`, $expected, "Replace WORK_DIR by build dir");  
 }
 
-{
+SKIP: {
+skip "too long", 1;
   local $ENV{DEVELOPMENT} = 0;
   mkdir 'cache';
   mkdir 'build';
@@ -65,5 +66,4 @@ EOF
     'Installing zlib from the scratch');  
 
   system 'rm -rf cache build';
-}
-
+};

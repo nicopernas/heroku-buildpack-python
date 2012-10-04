@@ -35,7 +35,7 @@ sub check_new_dependency {
 
 sub check_command {
   my $line = shift;
-  if(@dependencies && $line =~ m/^ -\s+(.*)$/) {
+  if(@dependencies && $line =~ m/^\s*-\s+(.*)$/) {
     my $command = $1;
     $command =~ s/BUILD_DIR/$build_dir/g;
     my $dep = $dependencies[-1];
@@ -70,7 +70,6 @@ foreach my $dep (@dependencies) {
   }
 }
 my $full_cmd = join ' ' , split(/ /, join(' && ', @cmds));
-print "$full_cmd\n";
 system($full_cmd) unless $DEV;
 
 chdir $actual_dir;
